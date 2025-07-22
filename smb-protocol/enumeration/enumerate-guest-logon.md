@@ -7,8 +7,8 @@ Make sure the password is empty
 {% endhint %}
 
 ```bash
-nxc smb 10.10.10.178 -u 'a' -p '' 
-nxc smb 10.10.10.178 -u 'a' -p '' --shares
+nxc smb $TARGET -u $USER -p $PASSWORD 
+nxc smb $TARGET -u $USER -p $PASSWORD --shares
 ```
 
 Note that if the domain guest account is available you will be able to use to launch attacks such as Coerces.

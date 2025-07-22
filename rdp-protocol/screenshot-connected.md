@@ -3,5 +3,5 @@
 Using the protocol you can perform RDP screenshot !
 
 ```bash
-nxc rdp <ip> -u <user> -p <password> --screenshot --screentime <second>
+nxc rdp $TARGET -u $USER -p $PASSWORD --screenshot --screentime <second>
 ```

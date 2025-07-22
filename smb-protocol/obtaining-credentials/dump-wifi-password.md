@@ -7,5 +7,5 @@ You need at least local admin privilege on the remote target, use option **--loc
 {% endhint %}
 
 ```bash
-nxc smb <ip> -u user -p pass -M wifi
+nxc smb $TARGET -u $USER -p $PASSWORD -M wifi
 ```

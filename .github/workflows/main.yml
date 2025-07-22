@@ -1,0 +1,39 @@
+name: Process Wiki
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - original
+      
+jobs:
+  sync-and-process:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout original branch
+        uses: actions/checkout@v4
+        with:
+          ref: original
+
+      - name: Fetch processing.py script and main.yml workflow from main branch
+        run: |
+          git fetch origin main
+          git checkout origin/main -- .github/
+      
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run processing.py
+        run: python .github/scripts/processing.py
+
+      - name: Commit and push changes to main branch
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+          git checkout -B main
+          git add .
+          git diff --quiet && git diff --staged --quiet || git commit -m "Update main with processed output"
+          git push origin main --force

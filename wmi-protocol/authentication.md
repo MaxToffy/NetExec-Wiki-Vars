@@ -9,13 +9,13 @@ You can use two methods to authenticate to the WMI: `windows` or `local` (defaul
 - With SMB port open
 
 ```bash
-nxc wmi 10.10.10.52 -u james -p 'J@m3s_P@ssW0rd!'
+nxc wmi $TARGET -u $USER -p $PASSWORD
 ```
 
 - With SMB port close, add the flag `-d DOMAIN`
 
 ```bash
-nxc wmi 10.10.10.52 -u james -p 'J@m3s_P@ssW0rd!' -d HTB
+nxc wmi $TARGET -u $USER -p $PASSWORD -d $DOMAIN
 ```
 
 Expected Results:
@@ -27,5 +27,5 @@ WMI       10.10.10.52     1433   MANTIS           [+] HTB\james:J@m3s_P@ssW0rd!
 ### **Local auth**
 
 ```bash
-nxc wmi 10.10.10.52 -u admin -p 'admin' --local-auth
+nxc wmi $TARGET -u $USER -p $PASSWORD --local-auth
 ```

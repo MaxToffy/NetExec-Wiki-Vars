@@ -10,8 +10,8 @@ You can also abuse `ForceChangePassword` to change the password of a user with t
 Change the password of the current user to NewPassword or a new NT hash:
 
 ```bash
-nxc smb <ip> -u user -p pass -M change-password -o NEWPASS=NewPassword
-nxc smb <ip> -u user -p pass -M change-password -o NEWNTHASH=31d6cfe0d16ae931b73c59d7e0c089c0
+nxc smb $TARGET -u $USER -p $PASSWORD -M change-password -o NEWPASS=NewPassword
+nxc smb $TARGET -u $USER -p $PASSWORD -M change-password -o NEWNTHASH=31d6cfe0d16ae931b73c59d7e0c089c0
 ```
 
 <figure><img src="../.gitbook/assets/reset_current_user-pw.png" alt=""><figcaption><p>Reset Password of current the user</p></figcaption></figure>
@@ -21,7 +21,7 @@ nxc smb <ip> -u user -p pass -M change-password -o NEWNTHASH=31d6cfe0d16ae931b73
 Change the password of different user with `ForceChangePassword` or admin privileges to NewPassword or a new NT hash:
 
 ```bash
-nxc smb <ip> -u user -p pass -M change-password -o USER=TargetUser NEWPASS=NewPassword
+nxc smb $TARGET -u $USER -p $PASSWORD -M change-password -o USER=TargetUser NEWPASS=NewPassword
 ```
 
 ![Change Password](../.gitbook/assets/changepasswd.png)
@@ -29,7 +29,7 @@ nxc smb <ip> -u user -p pass -M change-password -o USER=TargetUser NEWPASS=NewPa
 Change the NT hash of TargetUser to 10C035D527CA60BE3ADF51996E7CD7E1
 
 ```bash
-nxc smb <ip> -u user -p pass -M change-password -o USER=TargetUser NEWHASH=10C035D527CA60BE3ADF51996E7CD7E1
+nxc smb $TARGET -u $USER -p $PASSWORD -M change-password -o USER=TargetUser NEWHASH=10C035D527CA60BE3ADF51996E7CD7E1
 ```
 
 ![Change Hash](../.gitbook/assets/changehash.png)

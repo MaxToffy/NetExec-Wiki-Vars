@@ -3,5 +3,5 @@
 Enumerate local groups on the remote target
 
 ```bash
-nxc smb 192.168.1.0/24 -u UserNAme -p 'PASSWORDHERE' --local-group
+nxc smb $TARGET/24 -u $USER -p $PASSWORD --local-group
 ```

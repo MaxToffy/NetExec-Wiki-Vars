@@ -3,7 +3,7 @@
 #### Password spraying (without bruteforce)
 
 ```bash
-nxc mssql 192.168.1.0/24 -u userfile -p passwordfile --no-bruteforce
+nxc mssql $TARGET/24 -u $USERFILE -p $PASSFILE --no-bruteforce
 ```
 
 Expected Results:

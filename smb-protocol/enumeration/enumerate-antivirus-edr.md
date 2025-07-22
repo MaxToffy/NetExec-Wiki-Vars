@@ -7,5 +7,5 @@ description: Enumerate antivirus installed using NetExec
 You don't need to be a privileged user to do this action
 
 ```bash
-nxc smb <ip> -u user -p pass -M enum_av
+nxc smb $TARGET -u $USER -p $PASSWORD -M enum_av
 ```

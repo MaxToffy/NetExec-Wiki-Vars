@@ -5,17 +5,17 @@
 Testing if an account exists without kerberos protocol
 
 ```bash
-nxc ldap 192.168.1.0/24 -u users.txt -p '' -k
+nxc ldap $TARGET/24 -u $USER -p $PASSWORD -k
 ```
 
 #### Testing credentials
 
 ```bash
-nxc ldap 192.168.1.0/24 -u user -p password
+nxc ldap $TARGET/24 -u $USER -p $PASSWORD
 ```
 
 ```bash
-nxc ldap 192.168.1.0/24 -u user -H A29F7623FD11550DEF0192DE9246F46B
+nxc ldap $TARGET/24 -u $USER -H $NT_HASH
 ```
 
 Expected Results:

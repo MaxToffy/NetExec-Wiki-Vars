@@ -3,11 +3,11 @@
 Check if **Null Session**, also known as Anonymous session, is enabled on the network. Can be very useful on a Domain Controller to enumerate users, groups, password policies, etc.
 
 ```bash
-nxc smb 10.10.10.161 -u '' -p ''
-nxc smb 10.10.10.161 -u '' -p '' --shares
-nxc smb 10.10.10.161 -u '' -p '' --pass-pol
-nxc smb 10.10.10.161 -u '' -p '' --users
-nxc smb 10.10.10.161 -u '' -p '' --groups
+nxc smb $TARGET -u $USER -p $PASSWORD
+nxc smb $TARGET -u $USER -p $PASSWORD --shares
+nxc smb $TARGET -u $USER -p $PASSWORD --pass-pol
+nxc smb $TARGET -u $USER -p $PASSWORD --users
+nxc smb $TARGET -u $USER -p $PASSWORD --groups
 ```
 
 You can also reproduce this behavior with `smbclient` or `rpcclient`

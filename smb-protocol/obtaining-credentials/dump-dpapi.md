@@ -14,8 +14,8 @@ You need at least local admin privilege on the remote target, use **--local-auth
 {% endhint %}
 
 ```bash
-nxc smb <ip> -u user -p password --dpapi
-nxc smb <ip> -u user -p password --dpapi cookies
-nxc smb <ip> -u user -p password --dpapi nosystem
-nxc smb <ip> -u user -p password --local-auth --dpapi nosystem
+nxc smb $TARGET -u $USER -p $PASSWORD --dpapi
+nxc smb $TARGET -u $USER -p $PASSWORD --dpapi cookies
+nxc smb $TARGET -u $USER -p $PASSWORD --dpapi nosystem
+nxc smb $TARGET -u $USER -p $PASSWORD --local-auth --dpapi nosystem
 ```

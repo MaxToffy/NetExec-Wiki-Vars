@@ -3,7 +3,7 @@
 New LDAP module to look for password inside the user's description.
 
 ```bash
-nxc ldap <hostname> -u <user> -p <pass> -M get-desc-users
+nxc ldap $TARGET -u $USER -p $PASSWORD -M get-desc-users
 ```
 
 Three options are available:

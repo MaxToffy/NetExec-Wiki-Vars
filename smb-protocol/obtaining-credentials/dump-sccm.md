@@ -13,7 +13,7 @@ Requires Domain Admin or Local Admin Priviledges on target Domain Controller
 ```
 
 ```bash
-nxc smb 192.168.1.100 -u UserNAme -p 'PASSWORDHERE' --sccm
-nxc smb 192.168.1.100 -u UserNAme -p 'PASSWORDHERE' --sccm disk
-nxc smb 192.168.1.100 -u UserNAme -p 'PASSWORDHERE' --sccm wmi
+nxc smb $TARGET -u $USER -p $PASSWORD --sccm
+nxc smb $TARGET -u $USER -p $PASSWORD --sccm disk
+nxc smb $TARGET -u $USER -p $PASSWORD --sccm wmi
 ```

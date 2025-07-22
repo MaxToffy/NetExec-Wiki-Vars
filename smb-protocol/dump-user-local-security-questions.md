@@ -7,5 +7,5 @@ You need at least local admin privilege on the remote target
 New NetExec module to dump a local user's security questions if they have them.
 
 ```bash
-nxc smb <ip> -u user -p pass -M security-questions
+nxc smb $TARGET -u $USER -p $PASSWORD -M security-questions
 ```

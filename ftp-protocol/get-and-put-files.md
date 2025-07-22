@@ -11,13 +11,13 @@ description: >-
 List files in a specific directory using FTP.
 
 ```bash
-nxc ftp [IP_ADDRESS] -u [USERNAME] -p [PASSWORD] --ls [DIRECTORY]
+nxc ftp $TARGET -u $USER -p $PASSWORD --ls [DIRECTORY]
 ```
 
 Example:
 
 ```bash
-nxc ftp 10.10.176.246 -u frank -p D2xc9CgD --ls
+nxc ftp $TARGET -u $USER -p $PASSWORD --ls
 FTP         10.10.176.246   21     10.10.176.246    [*] Banner: (vsFTPd 3.0.3)
 FTP         10.10.176.246   21     10.10.176.246    [+] frank:D2xc9CgD
 FTP         10.10.176.246   21     10.10.176.246    [*] Directory Listing
@@ -31,13 +31,13 @@ FTP         10.10.176.246   21     10.10.176.246    -rw-rw-r--    1 1001     100
 Download a file from the FTP server.
 
 ```bash
-nxc ftp [IP_ADDRESS] -u [USERNAME] -p [PASSWORD] --get [FILE]
+nxc ftp $TARGET -u $USER -p $PASSWORD --get [FILE]
 ```
 
 Example:
 
 ```bash
-nxc ftp 10.10.176.246 -u frank -p D2xc9CgD --get ftp_flag.thm
+nxc ftp $TARGET -u $USER -p $PASSWORD --get ftp_flag.thm
 FTP         10.10.176.246   21     10.10.176.246    [*] Banner: (vsFTPd 3.0.3)
 FTP         10.10.176.246   21     10.10.176.246    [+] frank:D2xc9CgD
 FTP         10.10.176.246   21     10.10.176.246    [+] Downloaded: ftp_flag.thm
@@ -48,7 +48,7 @@ FTP         10.10.176.246   21     10.10.176.246    [+] Downloaded: ftp_flag.thm
 Upload a file to the FTP server providing you have relevant permissions
 
 ```bash
-nxc ftp [IP_ADDRESS] -u [USERNAME] -p [PASSWORD] --put [LOCAL_FILE] [REMOTE_FILE]
+nxc ftp $TARGET -u $USER -p $PASSWORD --put [LOCAL_FILE] [REMOTE_FILE]
 ```
 
 Example:

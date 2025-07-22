@@ -9,5 +9,5 @@ You need at least local admin privilege on the remote target, use option **--loc
 {% endhint %}
 
 ```bash
-nxc smb 192.168.56.11 -u eddard.stark -p FightP3aceAndHonor! -M rdcman
+nxc smb $TARGET -u $USER -p $PASSWORD -M rdcman
 ```

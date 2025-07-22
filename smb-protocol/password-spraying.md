@@ -9,15 +9,15 @@ description: Using NetExec for password spraying
 You can use multiple usernames or passwords by separating the names/passwords with a space.
 
 ```bash
-nxc smb 192.168.1.101 -u user1 user2 user3 -p Summer18
-nxc smb 192.168.1.101 -u user1 -p password1 password2 password3
+nxc smb $TARGET -u $USER user2 user3 -p $PASSWORD
+nxc smb $TARGET -u $USER -p $PASSWORD password2 password3
 ```
 
 nxc accepts txt files of usernames and passwords. One user/password per line. Watch out for account lockout!
 
 ```bash
-nxc smb 192.168.1.101 -u /path/to/users.txt -p Summer18
-nxc smb 192.168.1.101 -u Administrator -p /path/to/passwords.txt
+nxc smb $TARGET -u $USER -p $PASSWORD
+nxc smb $TARGET -u $USER -p $PASSWORD
 ```
 
 {% hint style="warning" %}
@@ -27,19 +27,19 @@ By default nxc will exit after a successful login is found. Using the **--contin
 Usage example:
 
 ```bash
-nxc smb 192.168.1.101 -u /path/to/users.txt -p Summer18 --continue-on-success
+nxc smb $TARGET -u $USER -p $PASSWORD --continue-on-success
 ```
 
 ### Checking 'username == password' using wordlist
 
 ```bash
-nxc smb 192.168.1.101 -u user.txt -p user.txt --no-bruteforce --continue-on-success
+nxc smb $TARGET -u $USER -p $PASSWORD --no-bruteforce --continue-on-success
 ```
 
 ### Checking multiple usernames/passwords using wordlist
 
 ```bash
-nxc smb 192.168.1.101 -u user.txt -p password.txt
+nxc smb $TARGET -u $USER -p $PASSWORD
 ```
 
 The result will be:
@@ -60,7 +60,7 @@ No bruteforce possible with this one as 1 user = 1 password
 {% endhint %}
 
 ```bash
-nxc smb 192.168.1.101 -u user.txt -p password.txt --no-bruteforce --continue-on-success
+nxc smb $TARGET -u $USER -p $PASSWORD --no-bruteforce --continue-on-success
 ```
 
 The result will be:

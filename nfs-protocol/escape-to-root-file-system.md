@@ -19,7 +19,7 @@ NetExec will automatically try to use the root escape if no share was specified 
 Example for  `--ls`:
 
 ```bash
-nxc nfs <ip> --ls '/'
+nxc nfs $TARGET --ls '/'
 
 # Example Output
 NFS         <ip>  <port>  <ip>   [*] Supported NFS versions: (3, 4) (root escape:True)

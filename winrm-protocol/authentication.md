@@ -5,7 +5,7 @@
 #### Testing credentials
 
 ```bash
-nxc winrm 192.168.1.0/24 -u user -p password
+nxc winrm $TARGET/24 -u $USER -p $PASSWORD
 ```
 
 Expected Results:
@@ -18,7 +18,7 @@ WINRM       192.168.255.131 5985   ROGER            [+] GOLD\user:password (Pwn3
 If the SMB port is closed you can also use the flag `-d DOMAIN` to avoid an SMB connection
 
 ```bash
-nxc winrm 192.168.1.0/24 -u user -p password -d DOMAIN
+nxc winrm $TARGET/24 -u $USER -p $PASSWORD -d $DOMAIN
 ```
 
 Expected Results:

@@ -3,5 +3,5 @@
 Enumerate disks on the remote target
 
 ```bash
-nxc smb 192.168.1.0/24 -u UserNAme -p 'PASSWORDHERE' --disks
+nxc smb $TARGET/24 -u $USER -p $PASSWORD --disks
 ```

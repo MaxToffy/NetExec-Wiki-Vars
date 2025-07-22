@@ -7,7 +7,7 @@ description: Execute MSSQL command using NetExec
 ### Execute MSSQL commands
 
 ```bash
-nxc mssql 10.10.10.52 -u admin -p 'm$$ql_S@_P@ssW0rd!' --local-auth -q 'SELECT name FROM master.dbo.sysdatabases;'
+nxc mssql $TARGET -u $USER -p $PASSWORD --local-auth -q 'SELECT name FROM master.dbo.sysdatabases;'
 ```
 
 Expected Results:

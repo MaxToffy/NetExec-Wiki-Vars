@@ -13,7 +13,7 @@ Finding credentials in unsaved Notepad files.
 Sensible content into unsaved notepad documents can be dangerous, as they still leave traces on the system. This module dumps currently unsaved notepad app's documents:
 
 ```bash
-nxc smb <ip> -u username -p password -M notepad
+nxc smb $TARGET -u $USER -p $PASSWORD -M notepad
 ```
 
 <figure><img src="../../.gitbook/assets/image (22).png" alt=""><figcaption><p>Extract credentials from (unsaved) notepad files</p></figcaption></figure>

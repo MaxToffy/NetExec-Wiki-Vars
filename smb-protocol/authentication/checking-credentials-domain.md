@@ -22,7 +22,7 @@ If NTLM authentication is not available, Kerberos requires the hostname and doma
 ### User/Password
 
 ```bash
-nxc smb 192.168.1.0/24 -u UserNAme -p 'PASSWORDHERE'
+nxc smb $TARGET/24 -u $USER -p $PASSWORD
 ```
 
 ### User/Hash
@@ -32,8 +32,8 @@ Administrator:500:aad3b435b51404eeaad3b435b51404ee:13b29964cc2480b4ef454c59562e6
 you can use both the full hash or just the nt hash (second half)
 
 ```bash
-nxc smb 192.168.1.0/24 -u UserNAme -H 'LM:NT'
-nxc smb 192.168.1.0/24 -u UserNAme -H 'NTHASH'
-nxc smb 192.168.1.0/24 -u Administrator -H '13b29964cc2480b4ef454c59562e675c'
-nxc smb 192.168.1.0/24 -u Administrator -H 'aad3b435b51404eeaad3b435b51404ee:13b29964cc2480b4ef454c59562e675c'
+nxc smb $TARGET/24 -u $USER -H $LM_HASH:$NT_HASH
+nxc smb $TARGET/24 -u $USER -H $NT_HASH
+nxc smb $TARGET/24 -u $USER -H $NT_HASH
+nxc smb $TARGET/24 -u $USER -H $LM_HASH:$NT_HASH
 ```
